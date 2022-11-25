@@ -1,0 +1,14 @@
+<p>COMPONENTE HEROES FUNCIONANDO!!!!</p>
+
+<h3>{{heroes.name | uppercase}} Details: </h3>
+
+<div>id: {{heroes.id}}</div>
+<div>name: {{heroes.name}}</div>
+
+<br>
+
+<div>
+  <label for="name">Hero name:</label>
+  <input type="text" id="name" [(ngModel)]="heroes.name" placeholder="name">
+</div>
+
