@@ -1,14 +1,18 @@
 <p>COMPONENTE HEROES FUNCIONANDO!!!!</p>
 
-<h3>{{heroes.name | uppercase}} Details: </h3>
+<h3>MY HEROES:</h3>
 
-<div>id: {{heroes.id}}</div>
-<div>name: {{heroes.name}}</div>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)" >
+      <label>{{hero.id}}: </label> {{hero.name}}
+    </li>
+</ul>
 
-<br>
+PRIMEIRO PASSO DA TRANSFERÊNCIA DE UM COMPONENTE PARA OUTRO:
+<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
 
-<div>
-  <label for="name">Hero name:</label>
-  <input type="text" id="name" [(ngModel)]="heroes.name" placeholder="name">
-</div>
+
+
 
