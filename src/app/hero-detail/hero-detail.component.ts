@@ -13,6 +13,7 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // SEGUNDO PASSO DA TRANSFERÊNCIA DE UM COMPONENTE PARA OUTRO
   @Input() hero?: Hero;
 
 }
