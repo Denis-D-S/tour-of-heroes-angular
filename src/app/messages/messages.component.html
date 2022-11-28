@@ -1,0 +1,29 @@
+
+<!--se existirem mensagens, mostre o template abaixo: -->
+  <mat-accordion *ngIf="this.messageService.getMessages().length > 0">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+<!--    título do arccordion -->
+        <mat-panel-title>
+          <h2> Messages</h2>
+        </mat-panel-title>
+<!--    descrição do accodion -->
+        <mat-panel-description>
+          {{messageService.getMessages().length}} record(s)
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+<!--      botão de clear as mensagens -->
+      <div>
+        <button mat-raised-button color="warn"  (click)="messageService.clear()">Clear messages</button>
+      </div>
+      <hr> <!-- linha de separação -->
+<!--      lista de mensagens -->
+      <div *ngFor="let message of messageService.getMessages()">
+        <div>{{message}}</div>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+

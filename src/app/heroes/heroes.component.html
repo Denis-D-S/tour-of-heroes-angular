@@ -2,11 +2,12 @@
 <h3>MY HEROES:</h3>
 
 <ul class="heroes">
-    <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)" >
+  <mat-list role="list"
+            *ngFor="let hero of heroes"
+            [class.selected]="hero === selectedHero"
+            (click)="onSelect(hero)" >
       <label>{{hero.id}}: </label> {{hero.name}}
-    </li>
+  </mat-list>
 </ul>
 
 <!--PRIMEIRO PASSO DA TRANSFERÊNCIA DE UM COMPONENTE PARA OUTRO: -->
