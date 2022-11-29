@@ -3,9 +3,8 @@
   margin: 20px;
 }
 
+.example-spacer { //este CSS joga o ícone de coração para a direta do header (tool-bar)
+  flex: 1 1 auto;
 
+}
 
-/* SEGUNDA DIV */
-.divA{font-size: 20px; min-height: 160px; background-color: rgb(237, 253, 177);}
-.divB{font-size: 20px; min-height: 160px; background-color: rgb(200, 223, 116);}
-.divC{font-size: 20px; min-height: 160px; background-color: chocolate;}

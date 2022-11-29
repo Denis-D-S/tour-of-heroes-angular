@@ -1,24 +1,38 @@
-
-  <mat-toolbar color="primary">
+<!--TÍTULO -->
+<mat-toolbar color="primary">
     <span>{{title}}</span>
+
+<!--    BOTÃO NO HEADER QUE CHAMA A LISTA DE HEROES (componente heroes) -->
+    <span class="example-spacer"></span>
+    <button mat-icon-button
+            aria-label="Heroes list"
+            routerLink="/heroes"
+            matTooltip="Heroes list">
+      <mat-icon>sports_martial_arts</mat-icon>
+    </button>
+
+  <!--    BOTÃO NO HEADER QUE CHAMA O DASHBOARD (componente dashboard) -->
+  <button mat-icon-button
+          aria-label="Dashboard"
+          routerLink="/dashboard"
+          matTooltip="Dashboard">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+
   </mat-toolbar>
 
-  <div class="content">
-    <app-heroes></app-heroes>
+<!--RESTO DOS COMPONENTES... -->
+  <div class="content" fxLayoutGap="50px">
+
+    <!--COMPONENTES DA APLICAÇÃO QUE SÃO CHAMADOS VIA ROTAS: -->
+    <router-outlet></router-outlet>
+
+<!--    COMPONENTE DE MENSAGENS SENDO CHAMADO -->
     <app-messages></app-messages>
-    <!--<router-outlet></router-outlet>-->
+
+<!--    <app-dashboard></app-dashboard>-->
   </div>
 
 
-
-<div fxLayout = "row wrap" fxLayoutAlign="center center" >
-  <!-- SEGUNDA DIV -->
-  <div fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayout="row wrap">
-    <div class="divA" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="center center">A</div>
-    <div class="divB" fxFlex="25%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="center center">B</div>
-    <div class="divC" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="center center">C</div>
-  </div>
-
-</div>
 
 

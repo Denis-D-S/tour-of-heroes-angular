@@ -25,7 +25,7 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes); //agora estamos preenchendo (com a lista de heróis) a variável inicializada vazia, porém de forma ASSÍNCRONA lendo o Observable da Service...
   }
 
-  onSelect(hero: Hero): void { //método para selecionar um herói quando clicar nele na lista
+  onSelect(hero: Hero): void { //método (ativado pelo evento de click) para selecionar um herói quando clicar nele na lista
     this.selectedHero = hero;
     this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`); //aqui estamos chamando o método add da MessageService, para adicionar uma mensagem na lista de mensagens
   }
