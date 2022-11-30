@@ -1,17 +1,16 @@
 
-<h3>MY HEROES:</h3>
+<h1>MY HEROES:</h1>
 
 <ul class="heroes">
   <mat-list role="list"
             *ngFor="let hero of heroes"
-            [class.selected]="hero === selectedHero"
-            (click)="onSelect(hero)" >
+            routerLink="/heroes/{{hero.id}}">
       <label>{{hero.id}}: </label> {{hero.name}}
   </mat-list>
 </ul>
 
 <!--PRIMEIRO PASSO DA TRANSFERÊNCIA DE UM COMPONENTE PARA OUTRO: -->
-<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
+<!--<app-hero-detail [hero] = "selectedHero"></app-hero-detail>-->
 
 
 
