@@ -17,10 +17,19 @@ export class HeroService { //esta classe simula a ideia de recebermos informaç�
     return heroes;  //retorna nossa lista de HEROES (nossa lista mockada de heróis) mas em forma de Observable Assíncrono
   }
 
-  // MÉTODO ESPECÍFICO QUE ENTRA NA LISTA DE TODOS OS HERÓIS E CAPTURA APENAS O HERÓI PELO ID, E RETORNA O HERÓI COMO UM OBSERVABLE
-  getHeroById(id: number): Observable<Hero> {
-    const hero = HEROES.find(h => h.id === id)!;
-    this.messageService.add(`HeroService: fetched hero id=${id} ... esta mensagem venho do método getHeroById() da Service`);
+  getHero(id: number): Observable<Hero>{
+    const hero = HEROES.find(hero => hero.id === id)!;
+    this.messageService.add(`HeroService: fetched hero id=${id} ... esta mensagem venho do método getHero() da Service`);
     return of(hero);
+  }
+
+
+
+  // MÉTODO ESPECÍFICO QUE ENTRA NA LISTA DE TODOS OS HERÓIS E CAPTURA APENAS O HERÓI PELO ID, E RETORNA O HERÓI COMO UM OBSERVABLE
+    getHeroById(id: string | null): Hero | undefined {
+      // @ts-ignore
+      const hero = HEROES.find(hero => hero.id === id);
+    this.messageService.add(`HeroService: fetched hero id=${id} ... esta mensagem venho do método getHeroById() da Service`);
+    return hero;
   }
 }
