@@ -34,6 +34,10 @@
     <div><span>O tamanho da tela é: </span> {{mediaQueryService.currentScreenSize}}</div>
     <div><span>A altura da tela é: </span> {{mediaQueryService.currentHeigh}}</div>
     <div><span>A largura da tela é: </span> {{mediaQueryService.currentWidth}}</div>
+
+    <div *ngIf="mediaQueryService.currentScreenSize === 'md'">
+      <img src="https://pbs.twimg.com/media/EUXOgVHUUAERTe6.jpg">
+    </div>
 <!--    <app-dashboard></app-dashboard>-->
   </div>
 
