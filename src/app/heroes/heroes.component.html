@@ -9,6 +9,20 @@
   </mat-list>
 </ul>
 
+<!--DICA DE COMO É O FLUXO DO CÓDIGO: ao clicar em qualquer herói do mat-list
+>>> é chamado o routerLink="/heroes/{{hero.id}}"
+>>> vai para a rota /heroes/1, /heroes/2, /heroes/3, etc.
+>>> e a rota vai chamar o component HeroDetails (isso está definido no app-routing.module.ts)
+>>> então o método getHero() vai rodar automaticamente (pois ele está no ngOnInit() da classe HeroDetails)
+>>> este método usa a HeroService (também método de nome 'getHero')
+>>> e o método getHero(), da HeroService, vai buscar o herói no servidor (neste caso é no nosso arquivo de mock)
+>>> e vai retornar o herói para o método 'getHero()' do HeroDetails
+>>> e o método getHero() (do HeroDetail) vai retornar o herói (que vem do mock) para o template HTML
+>>> e o template HTML vai mostrar o herói na tela. -->
+
+
+
+
 <!--PRIMEIRO PASSO DA TRANSFERÊNCIA DE UM COMPONENTE PARA OUTRO: -->
 <!--<app-hero-detail [hero] = "selectedHero"></app-hero-detail>-->
 

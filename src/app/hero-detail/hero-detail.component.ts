@@ -28,6 +28,7 @@ export class HeroDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id')); //aqui estamos pegando o parâmetro da URL (id do herói) e atribuindo a constante id
     this.heroService.getHero(id).subscribe(hero => this.hero = hero); //aqui estamos pegando o herói pelo id e atribuindo a variável hero
     console.log('constante id mostrada via método getHero() do hero-detail.component: ' + id);
+
   }
 
   // getHeroById(id: number): void {
@@ -35,5 +36,7 @@ export class HeroDetailComponent implements OnInit {
   // }
 
 
-
+  goBack() {
+    this.location.back(); //aqui estamos voltando para a tela anterior... Muito bom este 'location'... é uma biblioteca que facilmente busca "lembra" qual era a página anterior do histórico, e volta para ela...
+  }
 }
