@@ -27,7 +27,7 @@ import {MatCardModule} from "@angular/material/card";
     DashboardComponent
   ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,
