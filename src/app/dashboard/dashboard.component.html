@@ -3,12 +3,16 @@
 
 <div>
 <!--  DICA: graças a classe "pointer" abaixo colocamos no CSS o efeito "pointer" da mãozinha, isso dá a impressão no template que o mat-card é um button, mas na real não, é apenas um mat-card com um routerLink e um pointer embutido. No fundo ele acaba virando basicamente o mesmo que um botão... -->
-  <mat-card class="pointer"
+  <mat-card appearance="outlined" class="pointer"
             *ngFor="let hero of heroes"
-            routerLink="/heroes/{{hero.id}}}">
+            routerLink="/heroes/{{hero.id}}">
     <mat-card-title>{{hero.name}}</mat-card-title>
   </mat-card>
+
+
 </div>
+
+
 
 
 <!--<button (click)="getHeroes()">RODAR MÉTODO GET HEROES!</button>-->

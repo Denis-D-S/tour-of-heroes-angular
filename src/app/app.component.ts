@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MediaQueryService} from "./MediaQueryService";
+import {MediaQueryService} from "./mediaQueryService";
 
 @Component({
   selector: 'app-root',
