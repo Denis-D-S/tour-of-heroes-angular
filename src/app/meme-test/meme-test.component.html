@@ -19,6 +19,10 @@
 <h1>IMPRIMINDO O MEME USANDO NGRX: </h1>
 <!--Se "show$" for "true", então mostra a imagem. A função "trocar()" deve mudar o "show$" de false para true.-->
 <button (click)="trocar()" >SHOW MEME!</button>
-<div *ngIf="show$">
-  <img [src]="meme$" ]>
+
+<div [innerHTML]="derivada | async"></div>
+
+<div *ngIf="show$ | async">
+  <img src="{{meme$ | async}}"  alt="imagem de meme"/>
 </div>
+

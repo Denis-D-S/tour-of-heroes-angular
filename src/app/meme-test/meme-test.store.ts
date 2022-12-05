@@ -14,7 +14,7 @@ const defaultState: MemeTestState = { //cria o estado inicial do componente
 @Injectable() //insere/injeta o estado do componente no ComponentStore (para ser usado neste Component MemeTestStore
 export class MemeTestStore extends ComponentStore<MemeTestState> {
   constructor() {
-    console.log("MemeTestStore constructor rodou");
+    console.log("MemeTestStore constructor was called");
     super(defaultState);
   }
 }
