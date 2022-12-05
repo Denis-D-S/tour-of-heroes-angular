@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MediaQueryService} from "./mediaQueryService";
+import {MediaQueryService} from "./services/mediaQueryService";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {MediaQueryService} from "./mediaQueryService";
 export class AppComponent {
   title = 'Tour Of Heroes';
 
-  constructor( public mediaQueryService: MediaQueryService) {
+  constructor() {
 
   }
 

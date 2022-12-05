@@ -30,14 +30,9 @@
 <!--    COMPONENTE DE MENSAGENS SENDO CHAMADO -->
     <app-messages></app-messages>
 
-<!--    IMPRIMINDO O TAMANHO DA TELA (TESTANDO MINHA SERVICE NOVA): -->
-    <div><span>O tamanho da tela é: </span> {{mediaQueryService.currentScreenSize}}</div>
-    <div><span>A altura da tela é: </span> {{mediaQueryService.currentHeigh}}</div>
-    <div><span>A largura da tela é: </span> {{mediaQueryService.currentWidth}}</div>
+<!--    COMPONENTE DE MEME-TEST SENDO CHAMADO -->
+    <app-meme-test></app-meme-test>
 
-    <div *ngIf="mediaQueryService.currentScreenSize === 'md'">
-      <img src="https://pbs.twimg.com/media/EUXOgVHUUAERTe6.jpg">
-    </div>
 <!--    <app-dashboard></app-dashboard>-->
   </div>
 
