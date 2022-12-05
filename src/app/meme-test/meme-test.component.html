@@ -7,6 +7,18 @@
 <div><span>A altura da tela é: </span> {{mediaQueryService.currentHeigh}}</div>
 <div><span>A largura da tela é: </span> {{mediaQueryService.currentWidth}}</div>
 
+<!--IMPRIMINDO O MEME USANDO A SERVICE -->
 <div *ngIf="mediaQueryService.currentScreenSize === 'md'">
-  <img src="https://pbs.twimg.com/media/EUXOgVHUUAERTe6.jpg">
+  <img [src]="meme$" ]>
+</div>
+
+<br>
+<hr>
+
+<!--IMPRIMINDO O MEME USANDO NGRX -->
+<h1>IMPRIMINDO O MEME USANDO NGRX: </h1>
+<!--Se "show$" for "true", então mostra a imagem. A função "trocar()" deve mudar o "show$" de false para true.-->
+<button (click)="trocar()" >SHOW MEME!</button>
+<div *ngIf="show$">
+  <img [src]="meme$" ]>
 </div>
