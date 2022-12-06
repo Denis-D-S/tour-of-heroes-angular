@@ -20,8 +20,16 @@
 <!--Se "show$" for "true", então mostra a imagem. A função "trocar()" deve mudar o "show$" de false para true.-->
 <button (click)="trocar()" >SHOW MEME!</button>
 
+<br>
+<hr>
+
+<!--MEME 1 SENDO CHAMADO VIA SELECT DO NGRX + O MÉTODO "TROCAR" COM NGRX NELE -->
 <div [innerHTML]="derivada | async"></div>
 
+<br>
+<hr>
+
+<!--MEME 2 SENDO CHAMADO PELO ngIF + O MÉTODO "TROCAR" COM NGRX NELE -->
 <div *ngIf="show$ | async">
   <img src="{{meme$ | async}}"  alt="imagem de meme"/>
 </div>

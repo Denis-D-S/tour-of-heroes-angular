@@ -9,15 +9,13 @@ import {Observable} from "rxjs";
   selector: 'app-meme-test',
   templateUrl: './meme-test.component.html',
   styleUrls: ['./meme-test.component.scss'],
-  providers: [MemeTestStore] //insere/injeta o estado do componente no ComponentStore (para ser usado neste Component MemeTestStore
+  providers: [MemeTestStore] //insere o store no componente
 })
 export class MemeTestComponent implements OnInit {
   public readonly show$: Observable<boolean> | undefined; //este cara vai trocar a imagem para fazer aparecer e desaparecer.
   public readonly meme$: Observable<string> | undefined //este cara vai guardar o link da imagem do meme
-  public readonly derivada: Observable<string> | undefined
+  public readonly derivada: Observable<string> | undefined //esta variável é uma "derivada" das outras 2 variáveis acima que compoem o estado do componente. Esta variável "derivada" vai mudar quando o "estado antigo" da aplicação mudar para o "novo estado" (quando true virar false na var "show")
   public showDiv: string = "NENHUM MEME AINDA, CLIQUE NO BOTÃO ABAIXO PARA VER UM MEME!";
-
-  // public showDiv = "Isso é um teste pra ver se o erro é aqui mesmo";
 
   constructor(public mediaQueryService: MediaQueryService, private memeStore: MemeTestStore) {
     this.show$ = this.memeStore.select(state => state.show); //estamos pegando o valor de show do estado inicial/atual da Store
@@ -30,7 +28,7 @@ export class MemeTestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public trocar(): void{ //este método deve mudar a variável "show", para mostrar o meme na tela!
+  public trocar(): void{ //este método deve mudar a variável "show", para mostrar o meme na tela! Aqui estamos alterando o estado inicial para um "novo estado". O novo estado é o que vai ser mostrado na tela, via a variável "derivada"
     this.memeStore.setState((state) => ({
       ...state,
       show: !state.show,

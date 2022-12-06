@@ -17,6 +17,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatCardModule} from "@angular/material/card";
 import {MemeTestComponent} from "./meme-test/meme-test.component";
+import {LampTestComponent} from "./lamp-test/lamp-test.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MemeTestComponent} from "./meme-test/meme-test.component";
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    MemeTestComponent
+    MemeTestComponent,
+    LampTestComponent
   ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
