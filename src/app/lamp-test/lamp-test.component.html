@@ -1,2 +1,42 @@
 <h1>LAMP TEST COMPONENT RODANDO:</h1>
 
+<!--//LÂMPADA -->
+<div class="lampada"
+     [ngClass]="{'redondo': (formato$ | async) === 'circular'}"
+     [ngStyle]="{'background-color': (cor$ | async)}">
+
+</div>
+
+<div class="fila-de-botoes" fxLayout="row">
+  <!--BOTÃO QUE MUDA DE FORMATO -->
+  <div>
+    <button (click)="mudarFormato();">Mudar Formato</button>
+  </div>
+
+  <!--BOTÃO QUE LIGA E DESLIGA -->
+  <div>
+    <button (click)="ligarOuDesligar();">{{(ligada$ | async) ? 'Desligar' : 'Ligar'}}</button>
+  </div>
+
+<!--  //DICA: NOS 3 MÉTODOS ABAIXO, apenas por aprendizado, estou mostrando como daria para "mudar a cor" -->
+<!--  usando 2 métodos que fazem a mesma coisa, mas que foram construídos de formas diferentes. -->
+<!--  A cor "amarela" está sendo criada pelo método "mudarCor" (que usa o "setState" da Store) e a cor "vermelha" e "azul" -->
+<!--  estão sendo criadas pelo método "setCor" (que usa o "patchState" da Store). -->
+
+  <!--BOTÃO COR AMARELA-->
+  <div>
+    <button (click)="mudarCor('yellow');">Amarelo</button>
+  </div>
+
+  <!--BOTÃO COR VERMELHA-->
+  <div>
+    <button (click)="setCor('red');">Vermelho</button>
+  </div>
+
+  <!--BOTÃO COR AZUL-->
+  <div>
+    <button (click)="setCor('blue');">Azul</button>
+  </div>
+
+</div>
+

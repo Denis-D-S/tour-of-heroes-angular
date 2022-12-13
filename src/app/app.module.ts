@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatCardModule} from "@angular/material/card";
 import {MemeTestComponent} from "./meme-test/meme-test.component";
 import {LampTestComponent} from "./lamp-test/lamp-test.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {LampTestComponent} from "./lamp-test/lamp-test.component";
     LampTestComponent
   ],
     imports: [
-        BrowserModule.withServerTransition({ appId: 'serverApp' }),
+        BrowserModule.withServerTransition({appId: 'serverApp'}),
         AppRoutingModule,
         FormsModule,
         BrowserAnimationsModule,
@@ -40,7 +41,8 @@ import {LampTestComponent} from "./lamp-test/lamp-test.component";
         MatListModule,
         MatExpansionModule,
         MatTooltipModule,
-        MatCardModule
+        MatCardModule,
+        FlexLayoutModule
     ],
   providers: [],
   bootstrap: [AppComponent]
