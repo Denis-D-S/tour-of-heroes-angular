@@ -13,7 +13,7 @@ interface LampTestStoreState {
 //depois inicializa o estado inicial do componente
 const defaultState: LampTestStoreState = {
   ligada:false,
-  corQuandoLigada: 'yeallow',
+  corQuandoLigada: 'yellow',
   formato: 'quadrada'
 }
 

@@ -1,8 +1,11 @@
-<!--TÍTULO -->
-<mat-toolbar color="primary">
+
+<div class="container">
+
+  <!--TÍTULO -->
+  <mat-toolbar color="primary">
     <span>{{title}}</span>
 
-<!--    BOTÃO NO HEADER QUE CHAMA A LISTA DE HEROES (componente heroes) -->
+    <!--    BOTÃO NO HEADER QUE CHAMA A LISTA DE HEROES (componente heroes) -->
     <span class="example-spacer"></span>
     <button mat-icon-button
             aria-label="Heroes list"
@@ -11,34 +14,70 @@
       <mat-icon>sports_martial_arts</mat-icon>
     </button>
 
-  <!--    BOTÃO NO HEADER QUE CHAMA O DASHBOARD (componente dashboard) -->
-  <button mat-icon-button
-          aria-label="Dashboard"
-          routerLink="/dashboard"
-          matTooltip="Dashboard">
-    <mat-icon>dashboard</mat-icon>
-  </button>
+    <!--    BOTÃO NO HEADER QUE CHAMA O DASHBOARD (componente dashboard) -->
+    <button mat-icon-button
+            aria-label="Dashboard"
+            routerLink="/dashboard"
+            matTooltip="Dashboard">
+      <mat-icon>dashboard</mat-icon>
+    </button>
 
   </mat-toolbar>
 
-<!--RESTO DOS COMPONENTES... -->
+  <!--RESTO DOS COMPONENTES... -->
   <div class="content">
 
     <!--COMPONENTES DA APLICAÇÃO QUE SÃO CHAMADOS VIA ROTAS: -->
     <router-outlet></router-outlet>
 
-<!--    COMPONENTE DE MENSAGENS SENDO CHAMADO -->
+    <!--    COMPONENTE DE MENSAGENS SENDO CHAMADO -->
     <app-messages></app-messages>
 
-<!--    COMPONENTE DE MEME-TEST SENDO CHAMADO -->
+    <!--    COMPONENTE DE MEME-TEST SENDO CHAMADO -->
     <app-meme-test></app-meme-test>
 
-<!--    COMPONENTE DE LAMP-TEST SENDO CHAMADO -->
+    <!--    COMPONENTE DE LAMP-TEST SENDO CHAMADO -->
     <app-lamp-test></app-lamp-test>
 
-<!--    <app-dashboard></app-dashboard>-->
-  </div>
+    <!--    COMPONENTE DATA-BINDING SENDO CHAMADO -->
+    <br>
+    <div style="background-color: orange">
+      <hr>
+      <h2>Enquanto isso... no componente pai...</h2>
+      <h2>O valor abaixo está sendo passado via data-binding, de um componente pai para um filho: </h2>
 
+      <h2>O número é: {{myNumber}}</h2>
+
+      <app-data-binding-test
+        (bolhas)="metodoPaiCapturaBorbulhamento()">
+      </app-data-binding-test>
+
+    </div>
+
+    <!--    COMPONENTE TWO-WAY-DATA-BINDING SENDO CHAMADO -->
+    <br>
+    <div style="background-color: aquamarine">
+      <hr>
+      <h2>Enquanto isso... no componente pai...</h2>
+      <h2>O valor abaixo está sendo passado via two-way-data-binding, de um componente pai para um filho: </h2>
+
+      <app-two-way-data-binding></app-two-way-data-binding>
+
+
+
+
+    </div>
+
+
+    <!--    <app-dashboard></app-dashboard>-->
+
+
+
+
+  </div> <!--fim do 'content' onde ficam os componentes da aplicação -->
+
+
+</div> <!--fim do 'container' paizão -->
 
 
 
