@@ -19,21 +19,24 @@ import {MatCardModule} from "@angular/material/card";
 import {MemeTestComponent} from "./meme-test/meme-test.component";
 import {LampTestComponent} from "./lamp-test/lamp-test.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
-import {DataBindingTest} from "./data-binding-test/data-binding-test";
+import {EventBindingTest} from "./event-binding-test/event-binding-test";
 import {TwoWayDataBindingComponent} from "./two-way-data-binding/two-way-data-binding.component";
+import {MatInputModule} from "@angular/material/input";
+import {DataBindingSecondTestComponent} from "./data-binding-second-test/data-binding-second-test.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
-    MemeTestComponent,
-    LampTestComponent,
-    DataBindingTest,
-    TwoWayDataBindingComponent
-  ],
+    declarations: [
+        AppComponent,
+        HeroesComponent,
+        HeroDetailComponent,
+        MessagesComponent,
+        DashboardComponent,
+        MemeTestComponent,
+        LampTestComponent,
+        EventBindingTest,
+        TwoWayDataBindingComponent,
+        DataBindingSecondTestComponent
+    ],
     imports: [
         BrowserModule.withServerTransition({appId: 'serverApp'}),
         AppRoutingModule,
@@ -46,7 +49,8 @@ import {TwoWayDataBindingComponent} from "./two-way-data-binding/two-way-data-bi
         MatExpansionModule,
         MatTooltipModule,
         MatCardModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatInputModule
     ],
   providers: [],
   bootstrap: [AppComponent]

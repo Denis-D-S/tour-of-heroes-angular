@@ -1,0 +1,37 @@
+
+<h3> COMPONENTE "app-data-binding-second-test" RODANDO AQUI</h3>
+
+<div style="border: 3px solid red; border-radius: 10px; padding: 20px;">
+
+<!--  TESTE 1 - USANDO TWO WAY DATABINDING PARA PASSAR DADOS DE UM INPUT PARA UMA DIV -->
+  <h3> O título abaixo está sendo passado via PropertyBinding.
+    Criamos no TS a variável "título" que é passada para o HTML via Property Binding</h3>
+
+  <form>
+    <label>Digite aqui um novo nome: </label>
+    <input matInput
+           type="text"
+           name="nome"
+           [(ngModel)]="tituloCriadoNoTS">
+  </form>
+
+  <div>Imprima o título: {{tituloCriadoNoTS}} </div>
+
+  <hr>
+
+<!--  TESTE 2 - USANDO UM MÉTODO PARA PASSAR DADOS DE UM INPUT PARA UMA DIV -->
+  <h3> O exemplo abaixo é parecido com o de cima, exceto que aqui estamos usando um método,
+    ao invés de two-way databinding</h3>
+
+  <form>
+    <label>Digite aqui um novo nome: </label>
+    <input matInput
+           type="text"
+           name="nome2"
+           [placeholder]="outroTituloCriadoNoTS ? outroTituloCriadoNoTS : 'digite'"
+           (input)="updateTitle($event)">
+  </form>
+
+  <div>Imprima o título: {{outroTituloCriadoNoTS}} </div>
+
+</div>

@@ -30,29 +30,52 @@
     <!--COMPONENTES DA APLICAÇÃO QUE SÃO CHAMADOS VIA ROTAS: -->
     <router-outlet></router-outlet>
 
+    <!--    ////////////////////////////////////////////// -->
+
     <!--    COMPONENTE DE MENSAGENS SENDO CHAMADO -->
     <app-messages></app-messages>
 
     <!--    COMPONENTE DE MEME-TEST SENDO CHAMADO -->
     <app-meme-test></app-meme-test>
 
+    <!--    ////////////////////////////////////////////// -->
+
     <!--    COMPONENTE DE LAMP-TEST SENDO CHAMADO -->
     <app-lamp-test></app-lamp-test>
 
+    <!--    ////////////////////////////////////////////// -->
+
     <!--    COMPONENTE DATA-BINDING SENDO CHAMADO -->
-    <br>
-    <div style="background-color: orange">
-      <hr>
-      <h2>Enquanto isso... no componente pai...</h2>
-      <h2>O valor abaixo está sendo passado via data-binding, de um componente pai para um filho: </h2>
+    <div style="background-color: violet">
 
-      <h2>O número é: {{myNumber}}</h2>
+      <h3>Enquanto isso... no componente pai...O valor abaixo está sendo passado via event-binding, de um componente pai para um filho: </h3>
+      <div style="background-color: yellow; width: 15%">
+        <h2>O número é: {{myNumber}}</h2>
+      </div>
+      <br>
+      <div style="background-color: orange; margin-left: 5%">
+        <app-event-binding-test
+          (bolhas)="quandoReceboBorbulhamentoEuMudoNumero()"
+          (bolhas2)="pegueiOEvento($event)">
+        </app-event-binding-test>
+        <hr>
+      </div>
 
-      <app-data-binding-test
-        (bolhas)="metodoPaiCapturaBorbulhamento()">
-      </app-data-binding-test>
+      <h3>Enquanto isso... no componente pai...O valor abaixo está sendo passado via event-binding, de um componente pai para um filho:</h3>
+      <div style="background-color: yellow; width: 45%">
+        <h2>O evento que venho do filho foi: {{valorRecebidoPeloEvento}}</h2>
+      </div>
 
     </div>
+
+<!--    ////////////////////////////////////////////// -->
+
+    <!--    COMPONENTE DATA-BINDING-SECOND-TEST SENDO CHAMADO -->
+    <div style="background-color: lawngreen">
+      <app-data-binding-second-test></app-data-binding-second-test>
+    </div>
+
+    <!--    ////////////////////////////////////////////// -->
 
     <!--    COMPONENTE TWO-WAY-DATA-BINDING SENDO CHAMADO -->
     <br>
@@ -61,19 +84,27 @@
       <h2>Enquanto isso... no componente pai...</h2>
       <h2>O valor abaixo está sendo passado via two-way-data-binding, de um componente pai para um filho: </h2>
 
-      <app-two-way-data-binding></app-two-way-data-binding>
+<!--      <app-two-way-data-binding [(nomeDigitado)]="valorDigitado"></app-two-way-data-binding>-->
+      <app-two-way-data-binding (emitirNomeDigitado)="atualizarNomeDigitado($event)"></app-two-way-data-binding>
 
-
-
+      <div>
+        <h3>Nome digitado capturado no pai: {{nomeDigitado}}</h3>
+      </div>
 
     </div>
 
+    <!--    ////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+
 
     <!--    <app-dashboard></app-dashboard>-->
-
-
-
-
   </div> <!--fim do 'content' onde ficam os componentes da aplicação -->
 
 

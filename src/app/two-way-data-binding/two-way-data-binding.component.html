@@ -6,13 +6,10 @@
 <h3>EXEMPLO 2: ABAIXO UM BOTÃO QUE BORBULHA UM EVENTO DO PAI PARA O FILHO:</h3>
 
 <form>
-  <input type="text" [(ngModel)]="nome" placeholder="Digite seu nome">
+  <input type="text" name="digiteNome" [ngModel]="nomeDigitado" (ngModelChange)="emitirNomeDigitado.emit(nomeDigitado)" placeholder="Digite seu nome">
   <button>Enviar</button>
 </form>
 
-<div>
-  <h3>Nome digitado: {{nome}}</h3>
-</div>
 
 
 <hr>

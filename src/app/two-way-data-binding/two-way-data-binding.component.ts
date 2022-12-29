@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-two-way-data-binding',
@@ -6,13 +7,18 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./two-way-data-binding.component.scss']
 })
 export class TwoWayDataBindingComponent implements OnInit{
+  // @Output() nomeDigitado = new EventEmitter<string>();
+  @Output() inputValueChange: any;
 
-  public nome: string = '';
+  nomeDigitado:any;
+  @Output() emitirNomeDigitado = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
 
   }
+
 
 }
