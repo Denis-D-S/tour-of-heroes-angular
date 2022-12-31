@@ -7,10 +7,7 @@ import {Subject} from "rxjs";
   styleUrls: ['./two-way-data-binding.component.scss']
 })
 export class TwoWayDataBindingComponent implements OnInit{
-  // @Output() nomeDigitado = new EventEmitter<string>();
-  @Output() inputValueChange: any;
-
-  nomeDigitado:any;
+  nomeDigitado:string | undefined = "digite aqui...";
   @Output() emitirNomeDigitado = new EventEmitter<string>();
 
   constructor() {
@@ -19,6 +16,10 @@ export class TwoWayDataBindingComponent implements OnInit{
   ngOnInit(): void {
 
   }
-
-
+  capturandoDigitacaoDoUsuario($event: any) {
+    this.nomeDigitado = $event.target.value;
+  }
+  enviandoEventoParaPai($event: MouseEvent) {
+    this.emitirNomeDigitado.emit(this.nomeDigitado);
+  }
 }

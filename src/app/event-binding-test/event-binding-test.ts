@@ -11,7 +11,6 @@ export class EventBindingTest {
   @Output() bolhas2: EventEmitter<any>
   textoDigitado: string | undefined;
   public constructor() {
-
     this.bolhas = new EventEmitter<any>();
     this.bolhas2 = new EventEmitter<any>();
   }
@@ -24,7 +23,5 @@ export class EventBindingTest {
       console.log('O event (click) do botão, tem o seguinte atributo sendo emitido via evento: ' + textoDigitado);
       this.bolhas2.emit(textoDigitado);
     }
-
-
 
 }

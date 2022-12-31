@@ -6,8 +6,12 @@
 <h3>EXEMPLO 2: ABAIXO UM BOTÃO QUE BORBULHA UM EVENTO DO PAI PARA O FILHO:</h3>
 
 <form>
-  <input type="text" name="digiteNome" [ngModel]="nomeDigitado" (ngModelChange)="emitirNomeDigitado.emit(nomeDigitado)" placeholder="Digite seu nome">
-  <button>Enviar</button>
+  <input
+    type="text"
+    name="digiteNome"
+    [(ngModel)]="nomeDigitado"
+    (input)=capturandoDigitacaoDoUsuario($event)>
+  <button (click)=enviandoEventoParaPai($event)>Enviar para o pai</button>
 </form>
 
 

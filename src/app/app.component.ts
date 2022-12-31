@@ -8,17 +8,17 @@ import {MediaQueryService} from "./services/mediaQueryService";
 })
 export class AppComponent {
   title = 'Tour Of Heroes';
-  @Input() nomeDigitado: any;
+  @Input() nomeDigitado: string | undefined;
 
 
-  @Input() public borbulhou: string | undefined//este cara chegou até aqui vindo do componente "event-binding-test" e ele é apenas um event que não estamos fazendo nada com ele.
+  @Input() public borbulhou: string | undefined;
   valorRecebidoPeloEvento: string | undefined;
 
   myNumber = 0;
 
   constructor() {}
 
-  public pegueiOEvento(event: any): any {
+  public pegueiOEvento(event: string | undefined): any {
     this.valorRecebidoPeloEvento = event; //como o valor digitado é apenas uma string que estamos recebendo, apenas "event" é suficiente. Mas se o evento que estamos recebendo fosse um Objeto, teríamos daí que usar "event.target.value"
   }
 
@@ -27,8 +27,8 @@ export class AppComponent {
     this.myNumber = Math.floor(Math.random() * 10) + 1; //a variável que antes era "0" se transforma em algum número randômico de 1 a 10
   }
 
-  atualizarNomeDigitado(nome:string){
-    this.nomeDigitado = nome;
+  atualizarNomeDigitado(event:string){
+    this.nomeDigitado = event;
   }
 
 

@@ -42,6 +42,7 @@
 
     <!--    COMPONENTE DE LAMP-TEST SENDO CHAMADO -->
     <app-lamp-test></app-lamp-test>
+    <br><hr><br>
 
     <!--    ////////////////////////////////////////////// -->
 
@@ -84,10 +85,12 @@
       <h2>Enquanto isso... no componente pai...</h2>
       <h2>O valor abaixo está sendo passado via two-way-data-binding, de um componente pai para um filho: </h2>
 
-<!--      <app-two-way-data-binding [(nomeDigitado)]="valorDigitado"></app-two-way-data-binding>-->
-      <app-two-way-data-binding (emitirNomeDigitado)="atualizarNomeDigitado($event)"></app-two-way-data-binding>
-
-      <div>
+      <div style="background-color: orange; margin-left: 5%">
+        <app-two-way-data-binding
+          (emitirNomeDigitado)="atualizarNomeDigitado($event)">
+        </app-two-way-data-binding>
+      </div>
+      <div style="background-color: yellow">
         <h3>Nome digitado capturado no pai: {{nomeDigitado}}</h3>
       </div>
 
@@ -103,6 +106,7 @@
 
 
 
+    <br><br><hr><br>
 
     <!--    <app-dashboard></app-dashboard>-->
   </div> <!--fim do 'content' onde ficam os componentes da aplicação -->
