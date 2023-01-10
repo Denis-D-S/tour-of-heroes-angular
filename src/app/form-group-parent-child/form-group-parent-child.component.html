@@ -1,16 +1,61 @@
 <h2>COMPONENTE FORM GROUP PARENT CHILD</h2>
 
+<!--FAZENDO BIND COM PARENT FORM: -->
+
 <form [formGroup]="parentForm">
   <div formGroupName="childForm">
     <input formControlName="firstName" placeholder="First Name">
     <input formControlName="lastName" placeholder="Last Name">
+    <input formControlName="telefoneNumber" placeholder="Telefone Number">
+    <mat-checkbox formControlName="userIsNotARobot" >Eu não sou um robô!</mat-checkbox>
   </div>
 
+  <div formGroupName="childForm2">
+    <input formControlName="email" placeholder="E-mail" >
+    <input formControlName="password" placeholder="Password" >
+  </div>
+
+
 <!--  nome-->
-  <h3>{{ parentForm.get('childForm.firstName')?.value }}</h3>
+  <h3>Meu primeiro nome é: {{ parentForm.get('childForm.firstName')?.value }}</h3>
 
 <!--  sobrenome -->
-  <h3>{{ parentForm.get('childForm.lastName')?.value }}</h3>
+  <h3>Meu segundo nome é: {{ parentForm.get('childForm.lastName')?.value }}</h3>
+
+<!--  numero de telefone -->
+  <h3>Meu telefone é: {{ parentForm.get('childForm.telefoneNumber')?.value }}</h3>
+
+<!--  checkbox para confirmar que não é robô -->
+  <h3>Sou um ser humano: {{parentForm.get('childForm.userIsNotARobot')?.value}}</h3>
+
+  <h3>Meu e-mail é: {{parentForm.get('childForm2.email')?.value}}</h3>
+
+  <h3>Meu password é: {{parentForm.get('childForm2.password')?.value}}</h3>
 
 </form>
+
+<hr>
+
+<!--FAZENDO BIND COM UM SEGUNDO PARENT FORM -->
+
+<form [formGroup]="secondParentForm">
+  <div formGroupName="newUserForm">
+    <input formControlName="name" placeholder="Nome">
+    <input formControlName="cpf" placeholder="CPF">
+    <input formControlName="age" placeholder="E-mail">
+  </div>
+
+  <!--  nome-->
+  <h3>Seu nome é: {{ secondParentForm.get('newUserForm.name')?.value }}</h3>
+
+  <!--  cpf-->
+  <h3>Seu CPF é: {{ secondParentForm.get('newUserForm.cpf')?.value }}</h3>
+
+  <!--  idade-->
+  <h3>Sua idade é: {{ secondParentForm.get('newUserForm.age')?.value }}</h3>
+</form>
+
+<button (submit)="submitForm()"></button>
+
+
 

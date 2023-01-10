@@ -24,6 +24,7 @@ import {TwoWayDataBindingComponent} from "./two-way-data-binding/two-way-data-bi
 import {MatInputModule} from "@angular/material/input";
 import {DataBindingSecondTestComponent} from "./data-binding-second-test/data-binding-second-test.component";
 import {FormGroupParentChildComponent} from "./form-group-parent-child/form-group-parent-child.component";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
     declarations: [
@@ -39,22 +40,23 @@ import {FormGroupParentChildComponent} from "./form-group-parent-child/form-grou
         DataBindingSecondTestComponent,
         FormGroupParentChildComponent
     ],
-  imports: [
-    BrowserModule.withServerTransition({appId: 'serverApp'}),
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatExpansionModule,
-    MatTooltipModule,
-    MatCardModule,
-    FlexLayoutModule,
-    MatInputModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule.withServerTransition({appId: 'serverApp'}),
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        MatExpansionModule,
+        MatTooltipModule,
+        MatCardModule,
+        FlexLayoutModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatCheckboxModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
