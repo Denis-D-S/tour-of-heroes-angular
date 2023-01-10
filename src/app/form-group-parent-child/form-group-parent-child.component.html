@@ -1,0 +1,16 @@
+<h2>COMPONENTE FORM GROUP PARENT CHILD</h2>
+
+<form [formGroup]="parentForm">
+  <div formGroupName="childForm">
+    <input formControlName="firstName" placeholder="First Name">
+    <input formControlName="lastName" placeholder="Last Name">
+  </div>
+
+<!--  nome-->
+  <h3>{{ parentForm.get('childForm.firstName')?.value }}</h3>
+
+<!--  sobrenome -->
+  <h3>{{ parentForm.get('childForm.lastName')?.value }}</h3>
+
+</form>
+
